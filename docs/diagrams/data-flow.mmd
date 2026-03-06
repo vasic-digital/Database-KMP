@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant App
+    participant DB as NetworkStorageDatabase
+    participant Cache as CacheEntry
+    participant Op as NetworkOperation
+
+    App->>DB: insertStorage(storage)
+    App->>DB: getDocumentsByStorage(storageId)
+    DB-->>App: List<NetworkDocument>
+
+    App->>DB: insertOperation(download)
+    App->>DB: updateOperation(withProgress)
+    App->>DB: insertCacheEntry(entry)
+    App->>DB: updateSyncStatus(path, SYNCED)

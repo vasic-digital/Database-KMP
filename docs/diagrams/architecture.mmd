@@ -1,0 +1,13 @@
+graph TD
+    DB[NetworkStorageDatabase]
+    DB --> NS[NetworkStorage]
+    DB --> ND[NetworkDocument]
+    DB --> CE[CacheEntry]
+    DB --> NO[NetworkOperation]
+    DB --> SS[SyncStatus]
+
+    NS --> ST[StorageType]
+    ND --> SS
+    ND --> DP[DocumentPermission]
+    NO --> OT[OperationType]
+    NO --> OS[OperationStatus]
